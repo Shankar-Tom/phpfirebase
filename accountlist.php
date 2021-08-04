@@ -9,10 +9,10 @@ $users = $auth->listUsers();
     <td>A/C Status</td>
     <td>Action</td>
 </thead>
-<tbody contenteditable="true">
+<tbody >
 <?php
 foreach ($users as $user) {
-  $accountStatus=$user->disabled?'<a href="enable.php">Disabled</a>':'<a href="disbale.php">Enabled</a>';
+  $accountStatus=$user->disabled?'<a href="enable.php?id='.$user->uid.'"">Disabled</a>':'<a href="disbale.php?id='.$user->uid.'"">Enabled</a>';
   echo '<tr>
   <td>'.$user->displayName.'</td>
   <td>'.$user->email.'</td>
